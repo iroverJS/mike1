@@ -135,7 +135,7 @@
                                                     </value>
                                                     <next>
                                                       <block type="controls_if" id="317" inline="false">
-                                                        <mutation elseif="1" else="1"></mutation>
+                                                        <mutation elseif="2" else="1"></mutation>
                                                         <value name="IF0">
                                                           <block type="logic_compare" id="332" inline="true">
                                                             <field name="OP">LT</field>
@@ -152,7 +152,20 @@
                                                           </block>
                                                         </value>
                                                         <statement name="DO0">
-                                                          <block type="movement_left" id="456"></block>
+                                                          <block type="movement_left" id="456">
+                                                            <next>
+                                                              <block type="robot_delay" id="553" inline="true">
+                                                                <value name="DELAY">
+                                                                  <block type="math_number" id="554">
+                                                                    <field name="NUM">100</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="movement_forward" id="573"></block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
                                                         </statement>
                                                         <value name="IF1">
                                                           <block type="logic_compare" id="458" inline="true">
@@ -170,10 +183,51 @@
                                                           </block>
                                                         </value>
                                                         <statement name="DO1">
-                                                          <block type="movement_right" id="422"></block>
+                                                          <block type="movement_right" id="422">
+                                                            <next>
+                                                              <block type="robot_delay" id="551" inline="true">
+                                                                <value name="DELAY">
+                                                                  <block type="math_number" id="552">
+                                                                    <field name="NUM">100</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="movement_forward" id="574"></block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                        <value name="IF2">
+                                                          <block type="logic_compare" id="581" inline="true">
+                                                            <field name="OP">GT</field>
+                                                            <value name="A">
+                                                              <block type="sensor_object" id="582">
+                                                                <field name="OBJECT">RIGHTFRONT</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="math_number" id="583">
+                                                                <field name="NUM">90</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO2">
+                                                          <block type="movement_right" id="608"></block>
                                                         </statement>
                                                         <statement name="ELSE">
-                                                          <block type="movement_forward" id="406"></block>
+                                                          <block type="movement_forward" id="406">
+                                                            <next>
+                                                              <block type="robot_delay" id="549" inline="true">
+                                                                <value name="DELAY">
+                                                                  <block type="math_number" id="550">
+                                                                    <field name="NUM">200</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
                                                         </statement>
                                                         <next>
                                                           <block type="robot_delay" id="515" inline="true">
